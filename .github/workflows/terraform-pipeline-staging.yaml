@@ -4,14 +4,14 @@ name: "Terraform - AWS"
 on:
   push:
     # only run when files in this path changes
-    # https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#example-using-positive-and-negative-patterns-1
+    
     paths:
     - 'terraform-environments/aws/staging/**'
     branches:
       - main
   pull_request:
     # only run when files in this path changes
-    # https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#example-using-positive-and-negative-patterns-1
+    
     paths:
     - 'terraform-environments/aws/staging/**'
 
@@ -59,7 +59,7 @@ jobs:
           echo "##"
 
           # Set the parent dir into the Github Actions json matrix
-          # https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#fromjson
+          
           tf_config=''
           while IFS= read -r file
           do
@@ -91,7 +91,7 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           # terraform_version: 0.13.0:
-          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN_STAGING }}
+          cli_config_credentials_token: ${{ secrets.TF_ACCESS_TOKEN }}
 
       # - name: debug1
       #   id: debug1
