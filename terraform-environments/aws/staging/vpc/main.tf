@@ -4,7 +4,7 @@ locals {
   tags = {
     ops_env              = "${local.environment_name}"
     ops_managed_by       = "terraform",
-    ops_source_repo      = "iaac-asw-tf",
+    ops_source_repo      = "iaac-aws-tf",
     ops_source_repo_path = "terraform-environments/aws/${local.environment_name}/vpc",
     ops_owners           = "devops",
   }
@@ -36,8 +36,8 @@ provider "aws" {
 # VPC
 #
 module "vpc" {
-  source = "github.com/ManagedKube/kubernetes-ops/terraform-modules/aws/vpc?ref=v1.0.30"
-
+  source = "github.com/ManagedKube/kubernetes-ops//terraform-modules/aws/vpc?ref=v1.0.30"
+  #source = "./terraform-modules/aws/vpc"
   aws_region       = local.aws_region
   azs              = ["ca-central-1a", "ca-central-1b", "uca-central-1d"]
   vpc_cidr         = "10.0.0.0/16"
