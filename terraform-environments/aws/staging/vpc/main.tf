@@ -36,8 +36,8 @@ provider "aws" {
 # VPC
 #
 module "vpc" {
-  source = "https://github.com/usmanlakhani/iaac-aws-tf/tree/VPC/terraform-modules/aws/vpc?ref=v3.2.0"
-
+  #source = "https://github.com/usmanlakhani/iaac-aws-tf/tree/VPC/terraform-modules/aws/vpc?ref=v3.2.0"
+  source = "./terraform-modules/aws/vpc"
   aws_region       = local.aws_region
   azs              = ["ca-central-1a", "ca-central-1b", "uca-central-1d"]
   vpc_cidr         = "10.0.0.0/16"
