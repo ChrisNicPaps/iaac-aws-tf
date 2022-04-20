@@ -21,7 +21,7 @@ terraform {
   backend "remote" {
     # Update to your Terraform Cloud organization
     organization = "wcd-k8-ops"
-
+    #Update to your VPC workspace
     workspaces {
       name = "k8-ops-staging-vpc"
     }
@@ -30,6 +30,7 @@ terraform {
 
 provider "aws" {
   region = local.aws_region
+  #test
 }
 
 #
@@ -39,7 +40,7 @@ module "vpc" {
   source = "github.com/ManagedKube/kubernetes-ops//terraform-modules/aws/vpc?ref=v1.0.30"
   #source = "./terraform-modules/aws/vpc"
   aws_region       = local.aws_region
-  azs              = ["ca-central-1a", "ca-central-1b", "uca-central-1d"]
+  azs              = ["ca-central-1a", "ca-central-1b", "ca-central-1d"]
   vpc_cidr         = "10.0.0.0/16"
   private_subnets  = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
   public_subnets   = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
