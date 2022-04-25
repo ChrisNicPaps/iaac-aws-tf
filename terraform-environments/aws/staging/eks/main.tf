@@ -26,7 +26,7 @@ terraform {
     organization = "wcd-k8-ops"
 
     workspaces {
-      name = "k8-ops-${local.environment_name}-eks"
+      name = "k8-ops-staging-eks"
     }
   }
 }
