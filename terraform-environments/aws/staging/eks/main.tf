@@ -23,10 +23,10 @@ terraform {
 
   backend "remote" {
     # Update to your Terraform Cloud organization
-     organization = "wcd-k8-ops"
+    organization = "wcd-k8-ops"
 
     workspaces {
-      name = "k8-ops-staging-eks"
+      name = "k8-ops-${local.environment_name}-eks"
     }
   }
 }
@@ -41,7 +41,7 @@ data "terraform_remote_state" "vpc" {
     # Update to your Terraform Cloud organization
     organization = "wcd-k8-ops"
     workspaces = {
-      name = "k8-ops-staging-vpc"
+      name = "k8-ops-${local.environment_name}-vpc"
     }
   }
 }
@@ -81,6 +81,13 @@ module "eks" {
   ]
 
   # Add whatever roles and users you want to access your cluster
+  map_roles = [
+    {
+      rolearn  = "arn:aws:iam::66666666666:role/role1"
+      username = "role1"
+      groups   = ["system:masters"]
+    },
+  ]
   map_users = [
     {
       userarn  = "arn:aws:iam::617385041296:user/kube_admin"
