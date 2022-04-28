@@ -41,7 +41,7 @@ data "terraform_remote_state" "vpc" {
     # Update to your Terraform Cloud organization
     organization = "wcd-k8-ops"
     workspaces = {
-      name = "k8-ops-${local.environment_name}-vpc"
+      name = "k8-ops-staging-vpc"
     }
   }
 }
