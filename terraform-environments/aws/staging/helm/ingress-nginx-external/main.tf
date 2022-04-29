@@ -1,12 +1,12 @@
 locals {
   aws_region       = "ca-central-1"
-  environment_name = "staging"
+  environment_name = "Staging-Environment"
   namespace        = "ingress-nginx"
   tags = {
     ops_env              = "${local.environment_name}"
     ops_managed_by       = "terraform",
     ops_source_repo      = "iaac-aws-tf",
-    ops_source_repo_path = "terraform-environments/aws/${local.environment_name}/helm/ingress-nginx-external",
+    ops_source_repo_path = "terraform-environments/aws/staging/helm/ingress-nginx-external",
     ops_owners           = "devops",
   }
 }
