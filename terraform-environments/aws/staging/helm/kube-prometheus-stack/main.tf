@@ -4,7 +4,7 @@ locals {
   tags = {
     ops_env              = "${local.environment_name}"
     ops_managed_by       = "terraform",
-    ops_source_repo      = "kubernetes-ops",
+    ops_source_repo      = "iaac-aws-tf",
     ops_source_repo_path = "terraform-environments/aws/staging/helm/kube-prometheus-stack",
     ops_owners           = "devops",
   }
