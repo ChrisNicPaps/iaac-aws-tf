@@ -50,7 +50,7 @@ data "terraform_remote_state" "eks" {
     # Update to your Terraform Cloud organization
     organization = "wcd-k8-ops"
     workspaces = {
-      name = "kubernetes-ops-staging-eks"
+      name = "k8-ops-staging-eks"
     }
   }
 }
