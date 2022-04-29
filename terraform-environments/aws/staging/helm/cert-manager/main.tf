@@ -1,11 +1,11 @@
 locals {
   aws_region       = "ca-central-1"
-  environment_name = "staging"
+  environment_name = "Staging-Environment"
   tags = {
     ops_env              = "${local.environment_name}"
     ops_managed_by       = "terraform",
     ops_source_repo      = "iaac-aws-tf",
-    ops_source_repo_path = "terraform-environments/aws/${local.environment_name}/helm/cert-manager",
+    ops_source_repo_path = "terraform-environments/aws/staging/helm/cert-manager",
     ops_owners           = "devops",
   }
 }
