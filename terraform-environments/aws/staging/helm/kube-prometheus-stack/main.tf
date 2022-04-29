@@ -1,6 +1,6 @@
 locals {
   aws_region       = "ca-central-1"
-  environment_name = "Environment-Staging"
+  environment_name = "Staging-Environment"
   tags = {
     ops_env              = "${local.environment_name}"
     ops_managed_by       = "terraform",
@@ -22,10 +22,6 @@ terraform {
     helm = {
       source  = "hashicorp/helm"
       version = "2.3.0"
-    }
-    kubectl = {
-      source  = "gavinbunney/kubectl"
-      version = ">= 1.7.0"
     }
   }
 
@@ -49,7 +45,7 @@ data "terraform_remote_state" "eks" {
     # Update to your Terraform Cloud organization
     organization = "wcd-k8-ops"
     workspaces = {
-      name = "k8-ops-staging-eks"
+      name = "kubernetes-ops-staging-eks"
     }
   }
 }
