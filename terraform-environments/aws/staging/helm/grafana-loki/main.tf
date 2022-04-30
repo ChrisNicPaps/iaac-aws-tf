@@ -80,6 +80,6 @@ module "loki" {
   helm_values         = file("${path.module}/values.yaml")
 
   depends_on = [
-    data.terraform_remote_state.eks
+    data.terraform_remote_state.ekskubectl
   ]
 }
