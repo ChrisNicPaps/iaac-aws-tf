@@ -28,6 +28,9 @@ terraform {
   }
 }
 
+#
+# TERRAFORM PROVIDER
+#
 provider "aws" {
   region = local.aws_region
   #test
