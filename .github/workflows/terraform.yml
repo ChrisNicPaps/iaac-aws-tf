@@ -24,7 +24,7 @@ jobs:
       # path that has changed will be included in.
       TERRAFORM_CHECK_PATH: terraform-environments/aws/staging
     outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      matrix: ${{steps.set-matrix.outputs.matrix}}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -92,7 +92,7 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           # terraform_version: 0.13.0:
-          cli_config_credentials_token: ${{ secrets.TF_ACCESS_TOKEN }}
+          cli_config_credentials_token: ${{secrets.TF_ACCESS_TOKEN_2}}
 
       # - name: debug1
       #   id: debug1
