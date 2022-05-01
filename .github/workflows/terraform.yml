@@ -41,6 +41,7 @@ jobs:
           # leaving only the parent dir name
           while IFS= read -r file
           do
+            echo "======== Working on $parent_dir ==============="
             parent_dir=$(dirname -- "$file")
             echo $parent_dir >> file2.txt
           done < files1.txt
