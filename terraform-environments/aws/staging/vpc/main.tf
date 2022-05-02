@@ -20,7 +20,7 @@ terraform {
 
   backend "remote" {
     # Update to your Terraform Cloud organization
-    organization = "wcd-k8-ops"
+    organization = "cringle"
     #Update to your VPC workspace
     workspaces {
       name = "k8-ops-staging-vpc"
